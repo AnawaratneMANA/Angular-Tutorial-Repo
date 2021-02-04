@@ -1,10 +1,15 @@
-<div class="course-card">
+<div class="course-card" *ngIf="c">
 
     <div class="course-title">
         {{ num + " " +c.description}}
     </div>
     <img width="300" alt="Angular Logo"
-         [src]= c.iconUrl>
+         [src]= c.iconUrl *ngIf="isImageIsVisible(); else noImage">
+  <!--This ngIf command can also accept null statements not only boolean.-->
+
+    <ng-template #noImage>
+      <p>No image is available</p>
+    </ng-template>
 
     <div class="course-description">
         {{c.longDescription}}

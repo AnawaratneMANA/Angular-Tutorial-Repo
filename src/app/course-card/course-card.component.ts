@@ -33,4 +33,8 @@ export class CourseCardComponent implements OnInit {
     // Emitter is sending the c object.
   }
 
+  isImageIsVisible() {
+    // tslint:disable-next-line:no-unused-expression
+    return this.c && this.c.iconUrl;
+  }
 }
