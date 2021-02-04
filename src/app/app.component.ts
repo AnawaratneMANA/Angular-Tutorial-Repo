@@ -9,6 +9,9 @@ import {Course} from './model/course';
 })
 export class AppComponent {
 
+  // @ts-ignore
+  courses = COURSES;
+
   object1 = COURSES[0];
   object2 = COURSES[1];
   object3 = COURSES[2];

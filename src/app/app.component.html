@@ -9,9 +9,17 @@
 <div class="courses">
     <!-- This even will occur when click on the anywhere on the component-->
     <!-- Click event can also be replace with a custom event-->
-    <course-card (courseSelected)="onCourseSelected($event)" [c] = "object1"></course-card>
-    <course-card (courseSelected)="onCourseSelected($event)" [c] = "object2"></course-card>
-    <course-card (courseSelected)="onCourseSelected($event)" [c] = "object3"></course-card>
+    <course-card
+      *ngFor = "let course of courses;
+      index as i
+      even as isEven;
+      odd as isOdd;"
+
+      [class.is-even]="isEven"
+      [class.is-odd]="isOdd"
+                 (courseSelected)="onCourseSelected($event)" [c] = course [num]=(i+1)>
+    </course-card>
+
 </div>
 
 
