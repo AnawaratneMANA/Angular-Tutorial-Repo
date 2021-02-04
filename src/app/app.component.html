@@ -7,9 +7,11 @@
 
 
 <div class="courses">
-    <course-card [c] = "object1"></course-card>
-    <course-card [c] = "object2"></course-card>
-    <course-card [c] = "object3"></course-card>
+    <!-- This even will occur when click on the anywhere on the component-->
+    <!-- Click event can also be replace with a custom event-->
+    <course-card (courseSelected)="onCourseSelected($event)" [c] = "object1"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [c] = "object2"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [c] = "object3"></course-card>
 </div>
 
 
