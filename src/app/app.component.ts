@@ -12,9 +12,8 @@ export class AppComponent {
   // @ts-ignore
   courses = COURSES;
 
-  object1 = COURSES[0];
-  object2 = COURSES[1];
-  object3 = COURSES[2];
+  // Date
+  startDate = new Date(2000, 1, 7);
 
   // Create method onClassClicked()
   onCardClicked(course: Course) {
