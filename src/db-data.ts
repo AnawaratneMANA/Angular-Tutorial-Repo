@@ -4,7 +4,6 @@ export const COURSES: any = [
     id: 0,
     description: 'Angular Material Course',
     longDescription: 'Build Applications with the official Angular Widget Library',
-    category: 'ADVANCED'
   },
 
   {

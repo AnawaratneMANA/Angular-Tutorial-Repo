@@ -37,4 +37,18 @@ export class CourseCardComponent implements OnInit {
     // tslint:disable-next-line:no-unused-expression
     return this.c && this.c.iconUrl;
   }
+
+  applyStyle() {
+    // tslint:disable-next-line:triple-equals
+    if (this.c.category == 'ADVANCED') {
+      return 'beginner';
+    }
+  }
+
+  cardStyles() {
+    const icon = this.c.iconUrl;
+    return {
+      'background-image': 'url ( ' + icon + ')',
+    };
+  }
 }

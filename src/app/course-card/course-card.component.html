@@ -1,19 +1,28 @@
-<div class="course-card" *ngIf="c">
+<div class="course-card" *ngIf="c"
+     [ngClass]="applyStyle()"
+     [ngStyle]="cardStyles()"> <!-- Conditional style -->
 
-    <div class="course-title">
-        {{ num + " " +c.description}}
-    </div>
-    <img width="300" alt="Angular Logo"
-         [src]= c.iconUrl *ngIf="isImageIsVisible(); else noImage">
+  <div class="course-title" [ngStyle]="{'text-decoration': 'underline'}">
+    {{ num + " " + c.description}}
+  </div>
+  <img width="300" alt="Angular Logo"
+       [src]=c.iconUrl *ngIf="isImageIsVisible(); else noImage">
   <!--This ngIf command can also accept null statements not only boolean.-->
 
-    <ng-template #noImage>
-      <p>No image is available</p>
-    </ng-template>
+  <ng-template #noImage>
+    <p>No image is available</p>
+  </ng-template>
 
-    <div class="course-description">
-        {{c.longDescription}}
-    </div>
+  <div class="course-description">
+    {{c.longDescription}}
+  </div>
+  <div class="course-category" [ngSwitch]="c.category">
+    <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+    <div class="category" *ngSwitchDefault>All Levels</div>
+  </div>
+
   <!-- This event only get triggered with the button-->
   <button (click)="onCourseViewed()">View Course</button>
 
